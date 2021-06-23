@@ -2,9 +2,11 @@ language: node_js
 node_js:
   - "16"
 os: linux
+dist: xenial
 
 before_script:
   - npm install -g browserify
-
+  - npm install uniq
+  
 script:
-  browserify
+  - browserify main.js -o bundle.js
