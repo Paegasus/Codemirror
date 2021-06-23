@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "16"
+os: linux
+
+before_script:
+  - npm install -g browserify
+
+script:
+  browserify
