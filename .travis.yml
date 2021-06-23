@@ -10,3 +10,19 @@ before_script:
   
 script:
   - browserify main.js -o bundle.js
+
+deploy:
+  provider: releases
+  token: $GITHUB_API_KEY
+  file: $TRAVIS_BUILD_DIR/bundle.js
+  cleanup: false
+  name: dev-build-$TRAVIS_TAG
+  release_notes: Automatic build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) built by Travis CI on $(date +'%F %T %Z').
+  prerelease: true
+  overwrite: true
+  target_commitish: $TRAVIS_COMMIT
+  on:
+    tags: true
+
+after_deploy:
+  - rm -rf $TRAVIS_BUILD_DIR/bundle.js
