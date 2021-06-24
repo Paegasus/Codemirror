@@ -10,7 +10,7 @@ before_script:
   - npm install @codemirror/lang-javascript
   
 script:
-  - browserify main.js -o bundle.js
+  - browserify main.mjs -o bundle.js
 #  - ls -l
 
 deploy:
