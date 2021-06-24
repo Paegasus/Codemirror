@@ -6,11 +6,12 @@ dist: xenial
 
 before_script:
   - npm install -g browserify
+  - npm install esmify
   - npm install @codemirror/basic-setup
   - npm install @codemirror/lang-javascript
   
 script:
-  - browserify main.mjs -o bundle.js
+  - browserify -p esmify main.js -o bundle.js
 #  - ls -l
 
 deploy:
