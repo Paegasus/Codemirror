@@ -3,7 +3,7 @@ import {javascript} from "@codemirror/lang-javascript"
 
 let editor = new EditorView({
   state: EditorState.create({
-    extensions: [basicSetup, javascript()]
+    extensions: [basicSetup, javascript(), oneDarkTheme]
   }),
   parent: document.body
 })

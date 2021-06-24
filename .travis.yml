@@ -10,6 +10,7 @@ before_script:
   - npm install esmify
   - npm install @codemirror/basic-setup
   - npm install @codemirror/lang-javascript
+  - npm install @codemirror/theme-one-dark
   
 script:
   - browserify main.js -p esmify > bundle.js
