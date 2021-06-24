@@ -16,6 +16,7 @@ script:
 deploy:
   provider: releases
   token: $GITHUB_API_KEY
+  skip_cleanup: true
   file: $TRAVIS_BUILD_DIR/bundle.js
   name: dev-build-$TRAVIS_TAG
   release_notes: Automatic build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) built by Travis CI on $(date +'%F %T %Z').
