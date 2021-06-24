@@ -6,6 +6,7 @@ dist: xenial
 
 before_script:
   - npm install -g browserify
+  - npm install browser-resolve
   - npm install esmify
   - npm install @codemirror/basic-setup
   - npm install @codemirror/lang-javascript
