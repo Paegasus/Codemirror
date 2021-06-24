@@ -193,7 +193,7 @@ var _langJavascript = require("@codemirror/lang-javascript");
 
 let editor = new _basicSetup.EditorView({
   state: _basicSetup.EditorState.create({
-    extensions: [_basicSetup.basicSetup, (0, _langJavascript.javascript)()]
+    extensions: [_basicSetup.basicSetup, (0, _langJavascript.javascript)(), oneDarkTheme]
   }),
   parent: document.body
 });
