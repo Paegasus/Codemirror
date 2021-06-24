@@ -1,5 +1,9 @@
-var unique = require('uniq');
+import { EditorState, EditorView, basicSetup } from "@codemirror/basic-setup"
+import { javascript } from "@codemirror/lang-javascript"
 
-var data = [1, 2, 2, 3, 4, 5, 5, 5, 6];
-
-console.log(unique(data));
+let editor = new EditorView({
+  state: EditorState.create({
+    extensions: [basicSetup, javascript()]
+  }),
+  parent: document.body
+})

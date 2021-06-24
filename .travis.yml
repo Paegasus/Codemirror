@@ -6,17 +6,17 @@ dist: xenial
 
 before_script:
   - npm install -g browserify
-  - npm install uniq
+  - npm install @codemirror/basic-setup
+  - npm install @codemirror/lang-javascript
   
 script:
   - browserify main.js -o bundle.js
-  - ls -l
+#  - ls -l
 
 deploy:
   provider: releases
   token: $GITHUB_API_KEY
   file: $TRAVIS_BUILD_DIR/bundle.js
-  skip_cleanup: true
   name: dev-build-$TRAVIS_TAG
   release_notes: Automatic build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) built by Travis CI on $(date +'%F %T %Z').
   prerelease: true
