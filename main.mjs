@@ -1,5 +1,5 @@
-var basicSetup = require("@codemirror/basic-setup");
-var langJS = require("@codemirror/lang-javascript");
+import {EditorState, EditorView, basicSetup} from "@codemirror/basic-setup"
+import {javascript} from "@codemirror/lang-javascript"
 
 let editor = new EditorView({
   state: EditorState.create({
