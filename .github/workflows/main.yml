@@ -30,6 +30,7 @@ jobs:
           npm i @rollup/plugin-node-resolve
           npm i @codemirror/basic-setup
           npm i @codemirror/lang-javascript
+          npm i @codemirror/theme-one-dark
           rollup -c
       - name: Archive artifact
         uses: actions/upload-artifact@v2
