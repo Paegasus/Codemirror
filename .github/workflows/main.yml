@@ -18,14 +18,22 @@ jobs:
         node-version:
           - 16
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: 'Set up Node.js ${{ matrix.node-version }}'
+        uses: actions/setup-node@v2
         with:
           node-version: '${{ matrix.node-version }}'
-      - run: npm install -g browserify
-      - run: npm install browser-resolve
-      - run: npm install esmify
-      - run: npm install @codemirror/basic-setup
-      - run: npm install @codemirror/lang-javascript
-      - run: npm install @codemirror/theme-one-dark
-      - run: browserify main.js -p esmify > bundle.js
+      - name: Generate Bundle
+        run: npm install -g browserify
+        run: npm install browser-resolve
+        run: npm install esmify
+        run: npm install @codemirror/basic-setup
+        run: npm install @codemirror/lang-javascript
+        run: npm install @codemirror/theme-one-dark
+        run: browserify main.js -p esmify > bundle.js
+      - name: Archive artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: bundle
+          path: bundle.js
