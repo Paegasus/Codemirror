@@ -25,13 +25,14 @@ jobs:
         with:
           node-version: '${{ matrix.node-version }}'
       - name: Generate Bundle
-        run: npm install -g browserify
-        run: npm install browser-resolve
-        run: npm install esmify
-        run: npm install @codemirror/basic-setup
-        run: npm install @codemirror/lang-javascript
-        run: npm install @codemirror/theme-one-dark
-        run: browserify main.js -p esmify > bundle.js
+        run: |
+          npm install -g browserify
+          npm install browser-resolve
+          npm install esmify
+          npm install @codemirror/basic-setup
+          npm install @codemirror/lang-javascript
+          npm install @codemirror/theme-one-dark
+          browserify main.js -p esmify > bundle.js
       - name: Archive artifact
         uses: actions/upload-artifact@v2
         with:
