@@ -26,8 +26,10 @@ jobs:
           node-version: '${{ matrix.node-version }}'
       - name: Generate Bundle
         run: |
-          npm i @codemirror/basic-setup @codemirror/lang-javascript
-          npm i rollup @rollup/plugin-node-resolve
+          npm i -g rollup
+          npm i @rollup/plugin-node-resolve
+          npm i @codemirror/basic-setup
+          npm i @codemirror/lang-javascript
           rollup -c
       - name: Archive artifact
         uses: actions/upload-artifact@v2
