@@ -28,7 +28,7 @@ jobs:
         run: |
           npm i -g rollup
           npm i @rollup/plugin-node-resolve
-          npm i @codemirror/basic-setup
+          npm i @codemirror/basic-setup@0.19.0
           npm i @codemirror/lang-javascript
           npm i @codemirror/theme-one-dark
           rollup -c
