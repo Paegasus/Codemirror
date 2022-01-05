@@ -1,6 +1,5 @@
 import {EditorState, EditorView, basicSetup} from "@codemirror/basic-setup"
 import {javascript} from "@codemirror/lang-javascript"
-import {oneDark} from "@codemirror/theme-one-dark";
 
 let editorState = EditorState.create
 ({
@@ -8,9 +7,8 @@ let editorState = EditorState.create
   [
     basicSetup,
     javascript(),
-    oneDark
   ]
-});
+})
 
 let editor = new EditorView
 ({
